@@ -6,12 +6,15 @@ A quantitative metric for evaluating stripe texture fidelity in image-based virt
 
 ## Overview
 
-FDI integrates five computational modules:
-1. **Spatial Defense** — Mask-guided ROI extraction with skin suppression
-2. **C-GOV** — Circular Gradient Orientation Variance via phase-doubling circular statistics
-3. **CURV** — Menger Curvature for microscopic contour jaggedness
-4. **2D-FFT** — Spectral regularity assessment (Periodicity)
-5. **Ablation Framework** — Component-wise contribution analysis (α/β weight grid search)
+FDI integrates three complementary computational modules, preceded by a Spatial Defense preprocessing step:
+
+**Preprocessing: Spatial Defense** — Mask-guided ROI extraction with skin suppression and texture density validation
+
+1. **C-GOV** — Circular Gradient Orientation Variance via phase-doubling circular statistics
+2. **CURV** — Menger Curvature for microscopic contour jaggedness
+3. **Periodicity (2D-FFT)** — Spectral regularity assessment as a structural discount factor
+
+**Ablation Framework** — Separate component-wise contribution analysis (α/β weight grid search) and Spatial Defense validation
 
 **Formula**: `FDI = ψ · (α · C-GOV + β · CURV) · (2.0 − P)`
 **Calibrated scale**: `FDI < 15` = Excellent | `15–30` = Acceptable | `FDI ≥ 30` = Structural Violation
@@ -27,8 +30,8 @@ FDI_repo/
 ├── test_images/                      # 53 test images
 │   ├── synth_*.png                   # Synthetic stripe patterns
 │   ├── pexels_*.jpg / unsplash_*.jpg # Real garment photos
-│   ├── vton_*.png                    # Simulated VTON distortions (9 types)
-│   └── ref_*.png                     # Reference images for SSIM/PSNR
+│   ├── vton_*.png                    # Simulated VTON distortions (10 types)
+│   └── ref_*.png                     # Reference images for full-reference metrics
 ├── output/                           # Results & visualizations
 │   ├── FDI_alpha_grid_search.png     # Optimal α/β = 0.65/0.35 heatmap
 │   ├── fdi_ablation_chart.png        # Ablation study results
@@ -45,7 +48,7 @@ python batch_analysis_final.py       # Analyze all test images
 python grid_search_alpha.py          # Reproduce α/β grid search
 ```
 
-### Example Output
+### Example Output (VTON Simulation)
 
 ```
 Image                      FDI   C-GOV    CURV    P      Verdict
@@ -64,9 +67,9 @@ Texture Blur (VTON)        0.0   0.0000   0.0000  1.000  Excellent*
 |----------|-------|--------|---------|
 | Synthetic stripes | 15 | Programmatic generation | FDI calibration & noise/JPEG sensitivity |
 | Real garment photos | 10 | Unsplash / Pexels (CC0) | Real-world validation |
-| VTON simulation | 9 | Distortion simulation | Failure-mode coverage |
+| VTON simulation | 10 | Distortion + component analysis | Failure-mode coverage |
 
-**Total test images**: 53 (includes references, ablation, and grid search images)
+**Total test images**: 54 (includes references, ablation, and grid search images)
 
 ## Results Summary
 

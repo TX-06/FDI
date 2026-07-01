@@ -876,7 +876,7 @@ def analyze_stripe_distortion(
     external_mask_path: Optional[str] = None,
     # 消融实验
     ablation_mode: Optional[str] = None,
-) -> float:
+) -> Tuple[float, float, float, float]:
     """
     完整的条纹变形分析管线。
 
@@ -1008,7 +1008,8 @@ def analyze_stripe_distortion(
         label = "[Critical]  — catastrophic texture collapse"
     print(f"   Verdict:  {label}")
     print(f"   {'-' * 65}\n")
-    return fdi
+    # 返回完整诊断数据（C-GOV, CURV, P）供论文 Table 6 使用
+    return fdi, c_gov, cvm, periodicity
 
 
 # ═══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "synth_wavy_amp4.png",
+    "description": "Wavy Stripe (Amp=4)",
+    "category": "Synthetic",
+    "fdi": 17.287261704914272,
+    "ssim": 0.4233,
+    "psnr": 10.36
+  },
+  {
+    "name": "synth_wavy_amp8.png",
+    "description": "Wavy Stripe (Amp=8)",
+    "category": "Synthetic",
+    "fdi": 18.512672586366534,
+    "ssim": 0.1286,
+    "psnr": 6.7
+  },
+  {
+    "name": "synth_wavy_amp12.png",
+    "description": "Wavy Stripe (Amp=12)",
+    "category": "Synthetic",
+    "fdi": 15.956680040806532,
+    "ssim": -0.0345,
+    "psnr": 5.16
+  },
+  {
+    "name": "synth_wavy_amp16.png",
+    "description": "Wavy Stripe (Amp=16)",
+    "category": "Synthetic",
+    "fdi": 16.14353000652045,
+    "ssim": -0.0385,
+    "psnr": 5.6
+  },
+  {
+    "name": "synth_wavy_amp20.png",
+    "description": "Wavy Stripe (Amp=20)",
+    "category": "Synthetic",
+    "fdi": 17.452485971152782,
+    "ssim": 0.1383,
+    "psnr": 6.94
+  },
+  {
+    "name": "synth_noise_std10.png",
+    "description": "Gaussian Noise (\u03c3=10)",
+    "category": "Synthetic",
+    "fdi": 17.45320597081445,
+    "ssim": 0.8888,
+    "psnr": 32.8
+  },
+  {
+    "name": "synth_noise_std20.png",
+    "description": "Gaussian Noise (\u03c3=20)",
+    "category": "Synthetic",
+    "fdi": 19.145754500292238,
+    "ssim": 0.7605,
+    "psnr": 26.62
+  },
+  {
+    "name": "synth_noise_std30.png",
+    "description": "Gaussian Noise (\u03c3=30)",
+    "category": "Synthetic",
+    "fdi": 21.979294419288635,
+    "ssim": 0.6838,
+    "psnr": 23.01
+  },
+  {
+    "name": "synth_noise_std40.png",
+    "description": "Gaussian Noise (\u03c3=40)",
+    "category": "Synthetic",
+    "fdi": 25.038076456636194,
+    "ssim": 0.6363,
+    "psnr": 20.55
+  },
+  {
+    "name": "synth_jpeg_q85.png",
+    "description": "JPEG Compression (Q=85)",
+    "category": "Synthetic",
+    "fdi": 0.0,
+    "ssim": 0.9977,
+    "psnr": 51.37
+  },
+  {
+    "name": "synth_jpeg_q70.png",
+    "description": "JPEG Compression (Q=70)",
+    "category": "Synthetic",
+    "fdi": 0.0,
+    "ssim": 0.9921,
+    "psnr": 44.9
+  },
+  {
+    "name": "synth_jpeg_q50.png",
+    "description": "JPEG Compression (Q=50)",
+    "category": "Synthetic",
+    "fdi": 0.0,
+    "ssim": 0.9924,
+    "psnr": 45.86
+  },
+  {
+    "name": "synth_jpeg_q30.png",
+    "description": "JPEG Compression (Q=30)",
+    "category": "Synthetic",
+    "fdi": 0.0,
+    "ssim": 0.9571,
+    "psnr": 37.21
+  },
+  {
+    "name": "synth_jpeg_q15.png",
+    "description": "JPEG Compression (Q=15)",
+    "category": "Synthetic",
+    "fdi": 0.0,
+    "ssim": 0.875,
+    "psnr": 31.07
+  },
+  {
+    "name": "synth_cross_hatch.png",
+    "description": "Cross-Hatch Pattern",
+    "category": "Synthetic",
+    "fdi": 36.5611615255475,
+    "ssim": 0.6559,
+    "psnr": 10.9
+  }
+]
