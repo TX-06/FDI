@@ -15,8 +15,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-IMGDIR = Path("/Users/tengpeilin/sci/test_images")
-OUTDIR = Path("/Users/tengpeilin/sci/output")
+ROOT = Path(__file__).resolve().parent
+IMGDIR = ROOT / "test_images"
+OUTDIR = ROOT / "output"
 IMGDIR.mkdir(exist_ok=True)
 OUTDIR.mkdir(exist_ok=True)
 
@@ -51,9 +52,9 @@ for img_name, img_desc in test_set:
     for alpha in alpha_values:
         beta = round(1.0 - alpha, 2)
         try:
-            fdi = analyze_stripe_distortion(
+            fdi, _, _, _ = analyze_stripe_distortion(
                 image_path=img_path,
-                output_dir="output",
+                output_dir=str(OUTDIR),
                 blur_ksize=3,
                 gov_window_size=7,
                 mag_threshold=15.0,

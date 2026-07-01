@@ -14,9 +14,9 @@ import numpy as np
 from pathlib import Path
 import json
 
-IMGDIR = Path("/Users/tengpeilin/sci/test_images")
-OUTDIR = Path("/Users/tengpeilin/sci/output")
-ABLATION_OUT = Path("/Users/tengpeilin/sci/output_ablation")
+ROOT = Path(__file__).resolve().parent
+IMGDIR = ROOT / "test_images"
+OUTDIR = ROOT / "output"
 IMGDIR.mkdir(exist_ok=True)
 OUTDIR.mkdir(exist_ok=True)
 
@@ -139,9 +139,9 @@ for fname, ref_fname, desc in test_cases:
     ref_path = str(IMGDIR / ref_fname)
     
     try:
-        fdi = analyze_stripe_distortion(
+        fdi, _, _, _ = analyze_stripe_distortion(
             image_path=img_path,
-            output_dir="output",
+            output_dir=str(OUTDIR),
             blur_ksize=3,
             gov_window_size=7,
             mag_threshold=15.0,
@@ -170,9 +170,9 @@ for fname, ref_fname, desc in test_cases:
     print(f"  {desc:40s} FDI={fdi:5.1f}  SSIM={s}  PSNR={p}")
 
 # ── 保存结果 ──
-with open(Path.cwd() / "batch_results.json", "w") as f:
+with open(OUTDIR / "batch_results.json", "w") as f:
     json.dump(results, f, indent=2)
-print(f"\n结果已保存到: {Path.cwd() / 'batch_results.json'}")
+print(f"\n结果已保存到: {OUTDIR / 'batch_results.json'}")
 
 # ═══════════════════════════════════════════════════════════
 # 3. 生成对比图表

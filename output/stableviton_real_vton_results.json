@@ -1,0 +1,65 @@
+{
+  "samples": [
+    {
+      "name": "subject1_runway_female.png",
+      "description": "Runway female",
+      "source_model": "StableVITON",
+      "target_garment": "Horizontal stripe top",
+      "fdi": 24.12,
+      "c_gov": 0.9159,
+      "curv": 0.7501,
+      "periodicity": 1.0,
+      "category": "Acceptable"
+    },
+    {
+      "name": "subject2_stage_male.png",
+      "description": "Stage male",
+      "source_model": "StableVITON",
+      "target_garment": "Horizontal stripe top",
+      "fdi": 25.59,
+      "c_gov": 0.7653,
+      "curv": 0.7532,
+      "periodicity": 1.0,
+      "category": "Acceptable"
+    },
+    {
+      "name": "subject3_street_male.png",
+      "description": "Street male",
+      "source_model": "StableVITON",
+      "target_garment": "Horizontal stripe top",
+      "fdi": 26.01,
+      "c_gov": 0.7718,
+      "curv": 0.7773,
+      "periodicity": 1.0,
+      "category": "Acceptable"
+    },
+    {
+      "name": "subject4_event_female.png",
+      "description": "Event female",
+      "source_model": "StableVITON",
+      "target_garment": "Horizontal stripe top",
+      "fdi": 27.24,
+      "c_gov": 0.8986,
+      "curv": 0.7718,
+      "periodicity": 1.0,
+      "category": "Acceptable"
+    },
+    {
+      "name": "subject5_redcarpet_male.png",
+      "description": "Red-carpet male",
+      "source_model": "StableVITON",
+      "target_garment": "Horizontal stripe top",
+      "fdi": 28.09,
+      "c_gov": 0.8456,
+      "curv": 0.7809,
+      "periodicity": 1.0,
+      "category": "Acceptable"
+    }
+  ],
+  "summary": {
+    "mean": 26.21,
+    "std": 1.37,
+    "min": 24.12,
+    "max": 28.09
+  }
+}

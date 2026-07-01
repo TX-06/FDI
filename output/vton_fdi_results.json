@@ -1,12 +1,75 @@
 [
   {
+    "name": "vton_torso_drape.png",
+    "description": "VTON Torso Drape",
+    "fdi": 15.7,
+    "c_gov": 0.02,
+    "curv": 0.68,
+    "periodicity": 1.0,
+    "verdict": "Acceptable"
+  },
+  {
+    "name": "vton_warp_light.png",
+    "description": "VTON Light Warp",
+    "fdi": 18.2,
+    "c_gov": 0.05,
+    "curv": 0.7,
+    "periodicity": 1.0,
+    "verdict": "Acceptable"
+  },
+  {
+    "name": "vton_detail_loss.png",
+    "description": "VTON Detail Loss",
+    "fdi": 18.4,
+    "c_gov": 0.06,
+    "curv": 0.71,
+    "periodicity": 1.0,
+    "verdict": "Acceptable"
+  },
+  {
+    "name": "vton_warp_medium.png",
+    "description": "VTON Medium Warp",
+    "fdi": 21.6,
+    "c_gov": 0.13,
+    "curv": 0.72,
+    "periodicity": 1.0,
+    "verdict": "Acceptable"
+  },
+  {
+    "name": "vton_composite_failure.png",
+    "description": "VTON Composite Failure",
+    "fdi": 22.8,
+    "c_gov": 0.13,
+    "curv": 0.75,
+    "periodicity": 1.0,
+    "verdict": "Acceptable"
+  },
+  {
+    "name": "vton_warp_severe.png",
+    "description": "VTON Severe Warp",
+    "fdi": 25.4,
+    "c_gov": 0.19,
+    "curv": 0.77,
+    "periodicity": 1.0,
+    "verdict": "Acceptable"
+  },
+  {
+    "name": "vton_nonuniform_warp.png",
+    "description": "VTON Non-uniform Warp",
+    "fdi": 28.9,
+    "c_gov": 0.28,
+    "curv": 0.76,
+    "periodicity": 1.0,
+    "verdict": "Acceptable"
+  },
+  {
     "name": "vton_texture_blur.png",
     "description": "VTON Texture Blur",
     "fdi": 0.0,
     "c_gov": 0.0,
     "curv": 0.0,
     "periodicity": 1.0,
-    "verdict": "Excellent"
+    "verdict": "Known blind spot"
   },
   {
     "name": "vton_ghost_artifact.png",
@@ -15,69 +78,6 @@
     "c_gov": 0.0,
     "curv": 0.0,
     "periodicity": 1.0,
-    "verdict": "Excellent"
-  },
-  {
-    "name": "vton_torso_drape.png",
-    "description": "VTON Torso Drape",
-    "fdi": 15.7,
-    "c_gov": 0.0238,
-    "curv": 0.6837,
-    "periodicity": 1.0,
-    "verdict": "Good"
-  },
-  {
-    "name": "vton_warp_light.png",
-    "description": "VTON Light Warp",
-    "fdi": 18.2,
-    "c_gov": 0.5759,
-    "curv": 0.7015,
-    "periodicity": 1.0,
-    "verdict": "Good"
-  },
-  {
-    "name": "vton_detail_loss.png",
-    "description": "VTON Detail Loss",
-    "fdi": 18.3,
-    "c_gov": 0.6418,
-    "curv": 0.7052,
-    "periodicity": 1.0,
-    "verdict": "Good"
-  },
-  {
-    "name": "vton_warp_medium.png",
-    "description": "VTON Medium Warp",
-    "fdi": 21.6,
-    "c_gov": 0.6839,
-    "curv": 0.7155,
-    "periodicity": 1.0,
-    "verdict": "Good"
-  },
-  {
-    "name": "vton_composite_failure.png",
-    "description": "VTON Composite Failure",
-    "fdi": 22.5,
-    "c_gov": 0.9358,
-    "curv": 0.7539,
-    "periodicity": 1.0,
-    "verdict": "Good"
-  },
-  {
-    "name": "vton_warp_severe.png",
-    "description": "VTON Severe Warp",
-    "fdi": 25.4,
-    "c_gov": 0.2475,
-    "curv": 0.7706,
-    "periodicity": 1.0,
-    "verdict": "Good"
-  },
-  {
-    "name": "vton_nonuniform_warp.png",
-    "description": "VTON Non-uniform Warp",
-    "fdi": 28.9,
-    "c_gov": 0.9854,
-    "curv": 0.7599,
-    "periodicity": 1.0,
-    "verdict": "Good"
+    "verdict": "Known blind spot"
   }
 ]
