@@ -1,0 +1,47 @@
+[
+  {
+    "name": "vton_texture_blur.png",
+    "description": "VTON Texture Blur",
+    "fdi": 0.0
+  },
+  {
+    "name": "vton_ghost_artifact.png",
+    "description": "VTON Ghost Artifact",
+    "fdi": 0.0
+  },
+  {
+    "name": "vton_torso_drape.png",
+    "description": "VTON Torso Drape",
+    "fdi": 15.7
+  },
+  {
+    "name": "vton_warp_light.png",
+    "description": "VTON Light Warp",
+    "fdi": 18.18
+  },
+  {
+    "name": "vton_detail_loss.png",
+    "description": "VTON Detail Loss",
+    "fdi": 18.38
+  },
+  {
+    "name": "vton_warp_medium.png",
+    "description": "VTON Medium Warp",
+    "fdi": 21.62
+  },
+  {
+    "name": "vton_composite_failure.png",
+    "description": "VTON Composite Failure",
+    "fdi": 22.79
+  },
+  {
+    "name": "vton_warp_severe.png",
+    "description": "VTON Severe Warp",
+    "fdi": 25.43
+  },
+  {
+    "name": "vton_nonuniform_warp.png",
+    "description": "VTON Non-uniform Warp",
+    "fdi": 28.91
+  }
+]
