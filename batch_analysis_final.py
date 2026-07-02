@@ -21,11 +21,7 @@ IMGDIR.mkdir(exist_ok=True)
 OUTDIR.mkdir(exist_ok=True)
 
 # ── 导入 FDI 分析器中的关键函数 ──
-from stripe_distortion_analyzer import (
-    analyze_stripe_distortion,
-    compute_circ_gov_global,
-    compute_periodicity_fft,
-)
+from stripe_distortion_analyzer import analyze_stripe_distortion
 
 # ── SSIM / PSNR ──
 from skimage.metrics import structural_similarity as ssim
@@ -57,6 +53,7 @@ print("  1. 生成合成测试条纹图像")
 print("=" * 70)
 
 H, W = 512, 512
+rng = np.random.default_rng(2026)
 
 def save_synth(img, name):
     path = str(IMGDIR / name)
@@ -97,7 +94,7 @@ for amp in [4, 8, 12, 16, 20]:
 # (B) 频率噪声失真
 for noise_std in [10, 20, 30, 40]:
     ref = ref_20px.copy()
-    noise = np.random.normal(0, noise_std, ref.shape).astype(np.int16)
+    noise = rng.normal(0, noise_std, ref.shape).astype(np.int16)
     noisy = np.clip(ref.astype(np.int16) + noise, 0, 255).astype(np.uint8)
     fname = f"synth_noise_std{noise_std}.png"
     save_synth(noisy, fname)
@@ -139,7 +136,7 @@ for fname, ref_fname, desc in test_cases:
     ref_path = str(IMGDIR / ref_fname)
     
     try:
-        fdi, _, _, _ = analyze_stripe_distortion(
+        fdi, c_gov, _, _ = analyze_stripe_distortion(
             image_path=img_path,
             output_dir=str(OUTDIR),
             blur_ksize=3,
@@ -156,6 +153,7 @@ for fname, ref_fname, desc in test_cases:
     except Exception as e:
         print(f"  ✗ {fname}: FDI failed - {e}")
         fdi = None
+        c_gov = None
     
     s, p = compute_ssim_psnr(img_path, ref_path)
     
@@ -164,10 +162,13 @@ for fname, ref_fname, desc in test_cases:
         "description": desc,
         "category": "Synthetic",
         "fdi": fdi,
+        "c_gov": c_gov,
         "ssim": s,
         "psnr": p,
     })
-    print(f"  {desc:40s} FDI={fdi:5.1f}  SSIM={s}  PSNR={p}")
+    fdi_display = f"{fdi:5.1f}" if fdi is not None else "  N/A"
+    c_gov_display = f"{c_gov:.4f}" if c_gov is not None else "N/A"
+    print(f"  {desc:40s} FDI={fdi_display}  C-GOV={c_gov_display}  SSIM={s}  PSNR={p}")
 
 # ── 保存结果 ──
 with open(OUTDIR / "batch_results.json", "w") as f:
@@ -257,9 +258,10 @@ print(r"Test Image & FDI & C-GOV & SSIM & PSNR (dB) \\")
 print(r"\midrule")
 for r in results:
     fdi_str = f"{r['fdi']:.1f}" if r['fdi'] is not None else "N/A"
+    c_gov_str = f"{r['c_gov']:.4f}" if r['c_gov'] is not None else "N/A"
     ssim_str = f"{r['ssim']:.4f}" if r['ssim'] is not None else "N/A"
     psnr_str = f"{r['psnr']:.2f}" if r['psnr'] is not None else "N/A"
-    print(f"{r['description']:40s} & {fdi_str} & {ssim_str} & {psnr_str} \\\\")
+    print(f"{r['description']:40s} & {fdi_str} & {c_gov_str} & {ssim_str} & {psnr_str} \\\\")
 print(r"\bottomrule")
 print(r"\end{tabular}")
 print(r"\end{table}")

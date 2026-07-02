@@ -6,7 +6,7 @@
       "source_model": "StableVITON",
       "target_garment": "Horizontal stripe top",
       "fdi": 24.12,
-      "c_gov": 0.9159,
+      "c_gov": 0.1671,
       "curv": 0.7501,
       "periodicity": 1.0,
       "category": "Acceptable"
@@ -17,7 +17,7 @@
       "source_model": "StableVITON",
       "target_garment": "Horizontal stripe top",
       "fdi": 25.59,
-      "c_gov": 0.7653,
+      "c_gov": 0.2001,
       "curv": 0.7532,
       "periodicity": 1.0,
       "category": "Acceptable"
@@ -28,7 +28,7 @@
       "source_model": "StableVITON",
       "target_garment": "Horizontal stripe top",
       "fdi": 26.01,
-      "c_gov": 0.7718,
+      "c_gov": 0.197,
       "curv": 0.7773,
       "periodicity": 1.0,
       "category": "Acceptable"
@@ -39,7 +39,7 @@
       "source_model": "StableVITON",
       "target_garment": "Horizontal stripe top",
       "fdi": 27.24,
-      "c_gov": 0.8986,
+      "c_gov": 0.2292,
       "curv": 0.7718,
       "periodicity": 1.0,
       "category": "Acceptable"
@@ -50,7 +50,7 @@
       "source_model": "StableVITON",
       "target_garment": "Horizontal stripe top",
       "fdi": 28.09,
-      "c_gov": 0.8456,
+      "c_gov": 0.2445,
       "curv": 0.7809,
       "periodicity": 1.0,
       "category": "Acceptable"

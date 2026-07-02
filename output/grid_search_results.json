@@ -1,0 +1,686 @@
+[
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.05,
+    "beta": 0.95,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.1,
+    "beta": 0.9,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.15,
+    "beta": 0.85,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.2,
+    "beta": 0.8,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.25,
+    "beta": 0.75,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.3,
+    "beta": 0.7,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.35,
+    "beta": 0.65,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.4,
+    "beta": 0.6,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.45,
+    "beta": 0.55,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.5,
+    "beta": 0.5,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.55,
+    "beta": 0.45,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.6,
+    "beta": 0.4,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.65,
+    "beta": 0.35,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.7,
+    "beta": 0.3,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.75,
+    "beta": 0.25,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.8,
+    "beta": 0.2,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.85,
+    "beta": 0.15,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.9,
+    "beta": 0.1,
+    "fdi": 0.0
+  },
+  {
+    "image": "Perfect Vertical",
+    "alpha": 0.95,
+    "beta": 0.05,
+    "fdi": 0.0
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.05,
+    "beta": 0.95,
+    "fdi": 46.102122282609336
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.1,
+    "beta": 0.9,
+    "fdi": 43.80300147458911
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.15,
+    "beta": 0.85,
+    "fdi": 41.503880666568875
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.2,
+    "beta": 0.8,
+    "fdi": 39.20475985854865
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.25,
+    "beta": 0.75,
+    "fdi": 36.90563905052841
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.3,
+    "beta": 0.7,
+    "fdi": 34.606518242508166
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.35,
+    "beta": 0.65,
+    "fdi": 32.307397434487946
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.4,
+    "beta": 0.6,
+    "fdi": 30.0082766264677
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.45,
+    "beta": 0.55,
+    "fdi": 27.709155818447474
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.5,
+    "beta": 0.5,
+    "fdi": 25.41003501042724
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.55,
+    "beta": 0.45,
+    "fdi": 23.110914202407002
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.6,
+    "beta": 0.4,
+    "fdi": 20.811793394386775
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.65,
+    "beta": 0.35,
+    "fdi": 18.512672586366534
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.7,
+    "beta": 0.3,
+    "fdi": 16.2135517783463
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.75,
+    "beta": 0.25,
+    "fdi": 13.914430970326066
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.8,
+    "beta": 0.2,
+    "fdi": 11.615310162305834
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.85,
+    "beta": 0.15,
+    "fdi": 9.316189354285598
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.9,
+    "beta": 0.1,
+    "fdi": 7.017068546265364
+  },
+  {
+    "image": "Wavy (Amp=8)",
+    "alpha": 0.95,
+    "beta": 0.05,
+    "fdi": 4.71794773824513
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.05,
+    "beta": 0.95,
+    "fdi": 46.2407760778442
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.1,
+    "beta": 0.9,
+    "fdi": 43.98339727707208
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.15,
+    "beta": 0.85,
+    "fdi": 41.72601847629994
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.2,
+    "beta": 0.8,
+    "fdi": 39.46863967552781
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.25,
+    "beta": 0.75,
+    "fdi": 37.21126087475568
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.3,
+    "beta": 0.7,
+    "fdi": 34.95388207398356
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.35,
+    "beta": 0.65,
+    "fdi": 32.69650327321143
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.4,
+    "beta": 0.6,
+    "fdi": 30.43912447243929
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.45,
+    "beta": 0.55,
+    "fdi": 28.181745671667162
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.5,
+    "beta": 0.5,
+    "fdi": 25.924366870895028
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.55,
+    "beta": 0.45,
+    "fdi": 23.666988070122898
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.6,
+    "beta": 0.4,
+    "fdi": 21.409609269350767
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.65,
+    "beta": 0.35,
+    "fdi": 19.152230468578637
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.7,
+    "beta": 0.3,
+    "fdi": 16.894851667806503
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.75,
+    "beta": 0.25,
+    "fdi": 14.637472867034376
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.8,
+    "beta": 0.2,
+    "fdi": 12.380094066262247
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.85,
+    "beta": 0.15,
+    "fdi": 10.122715265490115
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.9,
+    "beta": 0.1,
+    "fdi": 7.865336464717985
+  },
+  {
+    "image": "Noise (\u03c3=20)",
+    "alpha": 0.95,
+    "beta": 0.05,
+    "fdi": 5.607957663945854
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.05,
+    "beta": 0.95,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.1,
+    "beta": 0.9,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.15,
+    "beta": 0.85,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.2,
+    "beta": 0.8,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.25,
+    "beta": 0.75,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.3,
+    "beta": 0.7,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.35,
+    "beta": 0.65,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.4,
+    "beta": 0.6,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.45,
+    "beta": 0.55,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.5,
+    "beta": 0.5,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.55,
+    "beta": 0.45,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.6,
+    "beta": 0.4,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.65,
+    "beta": 0.35,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.7,
+    "beta": 0.3,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.75,
+    "beta": 0.25,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.8,
+    "beta": 0.2,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.85,
+    "beta": 0.15,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.9,
+    "beta": 0.1,
+    "fdi": 0.0
+  },
+  {
+    "image": "JPEG (Q=15)",
+    "alpha": 0.95,
+    "beta": 0.05,
+    "fdi": 0.0
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.05,
+    "beta": 0.95,
+    "fdi": 42.91995796747506
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.1,
+    "beta": 0.9,
+    "fdi": 40.81516182795168
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.15,
+    "beta": 0.85,
+    "fdi": 38.71036568842828
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.2,
+    "beta": 0.8,
+    "fdi": 36.605569548904896
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.25,
+    "beta": 0.75,
+    "fdi": 34.50077340938151
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.3,
+    "beta": 0.7,
+    "fdi": 32.39597726985812
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.35,
+    "beta": 0.65,
+    "fdi": 30.29118113033474
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.4,
+    "beta": 0.6,
+    "fdi": 28.186384990811348
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.45,
+    "beta": 0.55,
+    "fdi": 26.08158885128796
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.5,
+    "beta": 0.5,
+    "fdi": 23.976792711764574
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.55,
+    "beta": 0.45,
+    "fdi": 21.87199657224119
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.6,
+    "beta": 0.4,
+    "fdi": 19.7672004327178
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.65,
+    "beta": 0.35,
+    "fdi": 17.662404293194413
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.7,
+    "beta": 0.3,
+    "fdi": 15.557608153671026
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.75,
+    "beta": 0.25,
+    "fdi": 13.45281201414764
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.8,
+    "beta": 0.2,
+    "fdi": 11.348015874624252
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.85,
+    "beta": 0.15,
+    "fdi": 9.243219735100865
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.9,
+    "beta": 0.1,
+    "fdi": 7.138423595577479
+  },
+  {
+    "image": "Real Torso",
+    "alpha": 0.95,
+    "beta": 0.05,
+    "fdi": 5.033627456054092
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.05,
+    "beta": 0.95,
+    "fdi": 50.82346507161856
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.1,
+    "beta": 0.9,
+    "fdi": 49.14395974576473
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.15,
+    "beta": 0.85,
+    "fdi": 47.464454419910915
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.2,
+    "beta": 0.8,
+    "fdi": 45.78494909405708
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.25,
+    "beta": 0.75,
+    "fdi": 44.10544376820326
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.3,
+    "beta": 0.7,
+    "fdi": 42.425938442349434
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.35,
+    "beta": 0.65,
+    "fdi": 40.74643311649561
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.4,
+    "beta": 0.6,
+    "fdi": 39.066927790641785
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.45,
+    "beta": 0.55,
+    "fdi": 37.38742246478797
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.5,
+    "beta": 0.5,
+    "fdi": 35.707917138934135
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.55,
+    "beta": 0.45,
+    "fdi": 34.02841181308032
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.6,
+    "beta": 0.4,
+    "fdi": 32.348906487226486
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.65,
+    "beta": 0.35,
+    "fdi": 30.66940116137266
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.7,
+    "beta": 0.3,
+    "fdi": 28.989895835518837
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.75,
+    "beta": 0.25,
+    "fdi": 27.310390509665012
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.8,
+    "beta": 0.2,
+    "fdi": 25.63088518381119
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.85,
+    "beta": 0.15,
+    "fdi": 23.95137985795736
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.9,
+    "beta": 0.1,
+    "fdi": 22.271874532103542
+  },
+  {
+    "image": "Real Stripe 1",
+    "alpha": 0.95,
+    "beta": 0.05,
+    "fdi": 20.592369206249717
+  }
+]

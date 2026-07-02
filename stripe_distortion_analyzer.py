@@ -659,11 +659,10 @@ def compute_fdi(
                                · (1 - w_period · periodicity))
 
     校准（基于合成+真实图像测试集验证）：
-      - 完美合成条纹                       → FDI ≈ 0
-      - 真实穿着条纹衬衫（有弯曲+光照）     → FDI ≈ 10-25
-      - 轻度 VTON 失真                      → FDI ≈ 30-50
-      - 严重 VTON 纹理崩溃                  → FDI ≈ 60-85
-      - 灾难性                              → FDI > 85
+      - 完美合成条纹                         → FDI ≈ 0
+      - 真实穿着条纹衬衫（有弯曲+光照）       → FDI ≈ 20-25
+      - 结构可接受的真实 VTON 条纹输出        → FDI ≈ 24-28
+      - 明显结构破坏                          → FDI ≥ 30
 
     返回：
         fdi:              织物变形指数 [0, 100]。
@@ -696,9 +695,9 @@ def compute_fdi(
 
     distortion_evidence = w_gov * gov_mean + w_curv * curv_mean
 
-    # 周期性折扣（温和版本）：只在恢复真实性很强时启用
-    # periodicity 阈值 0.7 以上才开始折扣
-    period_factor = max(0.0, (periodicity - 0.3) / 0.7)  # [0, 1]
+    # 与论文公式一致：FDI = ψ·(α·GOV + β·CURV)·(1 - γ·P)。
+    # P 直接使用 FFT 周期性强度，不再额外加入经验阈值。
+    period_factor = float(np.clip(periodicity, 0.0, 1.0))
     periodic_discount = 1.0 - w_period * period_factor
 
     raw = distortion_evidence * periodic_discount
@@ -997,7 +996,7 @@ def analyze_stripe_distortion(
     if fdi < 15:
         label = "[Excellent] — physically plausible fabric draping"
     elif fdi < 30:
-        label = "[Good]      — minor artifacts, generally acceptable"
+        label = "[Acceptable] — moderate but acceptable stripe deformation"
     elif fdi < 50:
         label = "[Moderate]  — noticeable stripe waviness / skew"
     elif fdi < 70:
@@ -1008,8 +1007,8 @@ def analyze_stripe_distortion(
         label = "[Critical]  — catastrophic texture collapse"
     print(f"   Verdict:  {label}")
     print(f"   {'-' * 65}\n")
-    # 返回完整诊断数据（C-GOV, CURV, P）供论文 Table 6 使用
-    return fdi, c_gov, cvm, periodicity
+    # 返回参与 FDI 计算的 ROI-level GOV、CURV 和 P，保证表格可复现。
+    return fdi, gm, cvm, periodicity
 
 
 # ═══════════════════════════════════════════════════════════════════════

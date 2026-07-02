@@ -32,7 +32,7 @@ def main() -> None:
     results = []
     for filename, description in SAMPLES:
         image_path = IMGDIR / filename
-        fdi, c_gov, curv, periodicity = analyze_stripe_distortion(
+        fdi, roi_gov, curv, periodicity = analyze_stripe_distortion(
             image_path=str(image_path),
             output_dir=str(OUTDIR),
             blur_ksize=3,
@@ -53,7 +53,7 @@ def main() -> None:
                 "source_model": "StableVITON",
                 "target_garment": "Horizontal stripe top",
                 "fdi": round(fdi, 2),
-                "c_gov": round(c_gov, 4),
+                "c_gov": round(roi_gov, 4),
                 "curv": round(curv, 4),
                 "periodicity": round(periodicity, 3),
                 "category": "Acceptable",

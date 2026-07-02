@@ -34,7 +34,7 @@ test_set = [
 ]
 
 # ── α 扫描范围 ──
-alpha_values = [round(x, 2) for x in np.arange(0.05, 0.96, 0.05)]
+alpha_values = [round(float(x), 2) for x in np.arange(0.05, 0.96, 0.05)]
 results = []
 
 print("=" * 70)

@@ -10,13 +10,15 @@ FDI integrates three complementary computational modules, preceded by a Spatial 
 
 **Preprocessing: Spatial Defense** — Mask-guided ROI extraction with skin suppression and texture density validation
 
-1. **C-GOV** — Circular Gradient Orientation Variance via phase-doubling circular statistics
+1. **C-GOV** — ROI-level Circular Gradient Orientation Variance used in the FDI formula
 2. **CURV** — Menger Curvature for microscopic contour jaggedness
 3. **Periodicity (2D-FFT)** — Spectral regularity assessment as a structural discount factor
 
 **Ablation Framework** — Separate component-wise contribution analysis (α/β weight grid search) and Spatial Defense validation
 
 **Formula**: `FDI = ψ · (α · C-GOV + β · CURV) · (1 − γ · P)`
+
+Here, `C-GOV` denotes the ROI-level aggregate GOV value used by the scoring function. The console also prints a global circular-orientation diagnostic, but that diagnostic is not substituted into the final FDI formula.
 
 Default parameters: `α = 0.65`, `β = 0.35`, `γ = 0.35`, `ψ = 100`.
 
