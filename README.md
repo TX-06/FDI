@@ -32,7 +32,7 @@ FDI_repo/
 ├── batch_analysis_final.py           # Batch analysis over test_images/
 ├── grid_search_alpha.py              # α/β weight grid search (0.05–0.95)
 ├── real_vton_stableviton_analysis.py # Real StableVITON stripe-output evaluation
-├── spectral_periodicity_analysis.py  # 2D-FFT periodicity sensitivity experiment
+├── spectral_periodicity_analysis.py  # 2D-FFT regularization sensitivity experiment
 ├── requirements.txt                  # Python dependencies
 ├── docs/
 │   └── FDI_SCI_Paper_Draft_Q3_best_reviewed.docx
@@ -91,7 +91,7 @@ The reviewed manuscript adds a real-output check using publicly released example
 | Red-carpet male | 34.4 | Moderate |
 | Mean ± SD | 31.4 ± 3.19 | Borderline-to-moderate |
 
-### 2D-FFT Periodicity Sensitivity
+### 2D-FFT Regularization Sensitivity
 
 The latest manuscript adds a controlled FFT validation experiment because the original peak-ratio implementation saturated at `P = 1.000` too often. The current implementation measures spectral energy concentration along the dominant stripe axis.
 

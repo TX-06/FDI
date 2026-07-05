@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-2D-FFT 周期性敏感性实验。
+2D-FFT 周期性正则敏感性实验。
 
 目的：
 验证 FDI 中的 P 项不是固定常数。实验构造从稳定周期条纹到周期崩塌的
@@ -133,7 +133,7 @@ def main() -> None:
     axes[0].bar(x, p_vals, color="#2E74B5")
     axes[0].set_ylim(0, 1.05)
     axes[0].set_ylabel("Periodicity P")
-    axes[0].set_title("2D-FFT Periodicity Sensitivity")
+    axes[0].set_title("2D-FFT Regularization Sensitivity")
     axes[0].grid(axis="y", alpha=0.25)
 
     width = 0.36
