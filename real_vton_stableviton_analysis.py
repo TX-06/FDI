@@ -11,6 +11,9 @@ import json
 import statistics
 from pathlib import Path
 
+import matplotlib.pyplot as plt
+from PIL import Image
+
 from stripe_distortion_analyzer import analyze_stripe_distortion
 
 
@@ -26,6 +29,48 @@ SAMPLES = [
     ("subject4_event_female.png", "Event female"),
     ("subject5_redcarpet_male.png", "Red-carpet male"),
 ]
+
+PANEL_IMAGES = [("target_cloth.png", "Target stripe cloth", None), *[
+    (filename, description, None) for filename, description in SAMPLES
+]]
+
+
+def categorize_fdi(fdi: float) -> str:
+    """根据 FDI 分数返回论文表格中的简短类别。"""
+    if fdi < 15:
+        return "Excellent"
+    if fdi < 30:
+        return "Acceptable"
+    if fdi < 45:
+        return "Moderate"
+    if fdi < 70:
+        return "Severe"
+    if fdi < 85:
+        return "Bad"
+    return "Critical"
+
+
+def save_summary_panel(results: list[dict]) -> Path:
+    """生成论文图 5 使用的 StableVITON 真实输出总览图。"""
+    score_by_name = {item["name"]: item["fdi"] for item in results}
+    fig, axes = plt.subplots(2, 3, figsize=(12, 10))
+    axes = axes.flatten()
+
+    for ax, (filename, title, _) in zip(axes, PANEL_IMAGES):
+        image = Image.open(IMGDIR / filename).convert("RGB")
+        ax.imshow(image)
+        ax.axis("off")
+        if filename == "target_cloth.png":
+            label = title
+        else:
+            label = f"{title}\nFDI={score_by_name[filename]:.1f}"
+        ax.text(0.0, -0.04, label, transform=ax.transAxes, fontsize=8, va="top")
+
+    fig.tight_layout()
+    panel_path = OUTDIR / "stableviton_real_vton_stripe_panel.png"
+    fig.savefig(panel_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    return panel_path
 
 
 def main() -> None:
@@ -56,7 +101,7 @@ def main() -> None:
                 "c_gov": round(roi_gov, 4),
                 "curv": round(curv, 4),
                 "periodicity": round(periodicity, 3),
-                "category": "Acceptable",
+                "category": categorize_fdi(fdi),
             }
         )
 
@@ -71,9 +116,11 @@ def main() -> None:
     payload = {"samples": results, "summary": summary}
     json_path = OUTDIR / "stableviton_real_vton_results.json"
     json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    panel_path = save_summary_panel(results)
 
     print(json.dumps(payload, indent=2))
     print(f"\nSaved: {json_path}")
+    print(f"Saved: {panel_path}")
 
 
 if __name__ == "__main__":

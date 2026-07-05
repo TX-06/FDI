@@ -480,9 +480,13 @@ def compute_periodicity_fft(
       0.0 = 完全无周期（AI 崩溃或纯噪声）
 
     算法：
-    1. 裁剪 ROI 区域进行 2D FFT
-    2. 在垂直于条纹方向的谱线上寻找信噪比峰值
-    3. 峰值能量 / 背景能量 = 周期强度
+    1. 对 ROI 区域进行 2D FFT，保留频谱可视化。
+    2. 将主导梯度方向旋转到水平轴，沿条纹方向聚合出一维周期剖面。
+    3. 计算一维剖面的主频窄带能量占有效高频能量的比例。
+
+    旧版实现使用峰值 / 背景能量比，容易在噪声或随机纹理中饱和到 1。
+    当前版本使用主频能量集中度：规则条纹保持高 P，非均匀间距、
+    频率混合或随机纹理会得到更低 P。
 
     参数：
         gray:         灰度图像 [H, W]。
@@ -497,8 +501,10 @@ def compute_periodicity_fft(
 
     # — 使用 ROI 区域或全图 —
     if roi_mask is not None:
-        masked = gray * roi_mask.astype(float)
+        roi_bool = roi_mask.astype(bool)
+        masked = gray * roi_bool.astype(float)
     else:
+        roi_bool = np.ones_like(gray, dtype=bool)
         masked = gray
 
     # — 应用汉宁窗减少频谱泄露 —
@@ -513,40 +519,57 @@ def compute_periodicity_fft(
 
     fft_viz = mag_log / (mag_log.max() + 1e-8)
 
-    # — 在垂直于条纹方向的轴上寻找周期性峰值 —
-    cx, cy = w // 2, h // 2
+    def _profile_for_angle(angle_deg: float) -> np.ndarray:
+        """将主导梯度方向旋转到水平轴后，提取横向灰度剖面。"""
+        center = (w / 2.0, h / 2.0)
+        matrix = cv2.getRotationMatrix2D(center, -float(angle_deg), 1.0)
+        rotated = cv2.warpAffine(
+            gray.astype(np.float32), matrix, (w, h),
+            flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT,
+        )
+        rotated_mask = cv2.warpAffine(
+            roi_bool.astype(np.uint8), matrix, (w, h),
+            flags=cv2.INTER_NEAREST, borderMode=cv2.BORDER_CONSTANT, borderValue=0,
+        ).astype(bool)
+
+        counts = rotated_mask.sum(axis=0).astype(np.float64)
+        sums = (rotated * rotated_mask).sum(axis=0).astype(np.float64)
+        valid = counts > max(3, 0.03 * h)
+        if valid.sum() < 16:
+            return np.array([], dtype=np.float64)
+        profile = sums[valid] / np.maximum(counts[valid], 1.0)
+        return profile.astype(np.float64)
+
+    def _periodicity_from_profile(profile: np.ndarray) -> float:
+        """主频窄带能量集中度，映射到 [0, 1]。"""
+        if profile.size < 16 or np.std(profile) < 1e-6:
+            return 0.0
+        profile = profile - float(np.mean(profile))
+        profile = profile * np.hanning(profile.size)
+        power = np.abs(np.fft.rfft(profile)) ** 2
+        if power.size <= 5:
+            return 0.0
+        # 去掉 DC 和极低频光照/阴影趋势。
+        power[:2] = 0.0
+        total = float(power.sum())
+        if total <= 1e-9:
+            return 0.0
+        peak_idx = int(np.argmax(power))
+        lo = max(2, peak_idx - 1)
+        hi = min(power.size, peak_idx + 2)
+        peak_band = float(power[lo:hi].sum())
+        concentration = peak_band / total
+        # 0.08 以下视为无稳定主频，0.55 以上视为强周期。
+        return float(np.clip((concentration - 0.08) / 0.47, 0.0, 1.0))
 
     if dominant_deg is not None:
-        # 沿垂直于条纹的方向搜索
-        search_angle = (dominant_deg + 90) % 180
-        theta = np.radians(search_angle)
+        profile = _profile_for_angle(dominant_deg)
+        periodicity_strength = _periodicity_from_profile(profile)
     else:
-        # 若无主导方向，沿多条径向扫描找最强峰
-        best_peak_ratio = 0.0
-        for angle_deg in range(0, 180, 5):
-            theta = np.radians(angle_deg)
-            radial = _sample_radial(mag_spec, cx, cy, theta, max_r=min(cx, cy))
-            if len(radial) < 5:
-                continue
-            peak = radial.max()
-            bg = (radial.sum() - peak) / max(len(radial) - 1, 1)
-            ratio = peak / max(bg, 1e-6)
-            if ratio > best_peak_ratio:
-                best_peak_ratio = ratio
-        periodicity_strength = float(np.clip(best_peak_ratio / 12.0, 0, 1))
-        return periodicity_strength, fft_viz
-
-    # 沿特定方向采样
-    radial = _sample_radial(mag_spec, cx, cy, theta, max_r=min(cx, cy))
-    if len(radial) < 5:
-        return 0.0, fft_viz
-
-    peak = radial.max()
-    bg = (radial.sum() - peak) / max(len(radial) - 1, 1)
-    peak_ratio = peak / max(bg, 1e-6)
-
-    # 映射到 [0, 1]： 比率 3 以下≈无周期； 12 以上≈强周期
-    periodicity_strength = float(np.clip((peak_ratio - 2.0) / 10.0, 0, 1))
+        candidates = []
+        for angle_deg in range(0, 180, 10):
+            candidates.append(_periodicity_from_profile(_profile_for_angle(angle_deg)))
+        periodicity_strength = float(max(candidates) if candidates else 0.0)
 
     return periodicity_strength, fft_viz
 
@@ -997,10 +1020,10 @@ def analyze_stripe_distortion(
         label = "[Excellent] — physically plausible fabric draping"
     elif fdi < 30:
         label = "[Acceptable] — moderate but acceptable stripe deformation"
-    elif fdi < 50:
+    elif fdi < 45:
         label = "[Moderate]  — noticeable stripe waviness / skew"
     elif fdi < 70:
-        label = "[Poor]      — significant fabric-physics violation"
+        label = "[Severe]    — significant fabric-physics violation"
     elif fdi < 85:
         label = "[Bad]       — severe AI-generated texture breakdown"
     else:
