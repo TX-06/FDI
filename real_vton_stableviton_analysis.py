@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import statistics
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -50,6 +51,11 @@ def categorize_fdi(fdi: float) -> str:
     return "Critical"
 
 
+def format_one_decimal(value: float) -> str:
+    """按论文表格习惯使用 half-up 规则显示一位小数。"""
+    return str(Decimal(str(value)).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP))
+
+
 def save_summary_panel(results: list[dict]) -> Path:
     """生成论文图 5 使用的 StableVITON 真实输出总览图。"""
     score_by_name = {item["name"]: item["fdi"] for item in results}
@@ -63,7 +69,7 @@ def save_summary_panel(results: list[dict]) -> Path:
         if filename == "target_cloth.png":
             label = title
         else:
-            label = f"{title}\nFDI={score_by_name[filename]:.1f}"
+            label = f"{title}\nFDI={format_one_decimal(score_by_name[filename])}"
         ax.text(0.0, -0.04, label, transform=ax.transAxes, fontsize=8, va="top")
 
     fig.tight_layout()
