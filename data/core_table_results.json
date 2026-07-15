@@ -1,0 +1,105 @@
+{
+  "Table1": [
+    {
+      "desc": "Perfect Vertical",
+      "file": "synthetic_perfect_vertical.png",
+      "fdi": 0.0,
+      "c_gov": 0.0,
+      "curv": 0.0,
+      "p": 1.0,
+      "verdict": "LR"
+    },
+    {
+      "desc": "Perfect Horizontal",
+      "file": "synthetic_perfect_horizontal.png",
+      "fdi": 0.0,
+      "c_gov": 0.0,
+      "curv": 0.0,
+      "p": 1.0,
+      "verdict": "LR"
+    },
+    {
+      "desc": "Regular diagonal stripe (45 deg)",
+      "file": "synthetic_diagonal_45.png",
+      "fdi": 10.7,
+      "c_gov": 0.1047,
+      "curv": 0.019,
+      "p": 1.0,
+      "verdict": "LR"
+    },
+    {
+      "desc": "Bidirectional Grid (Out-of-scope)",
+      "file": "synthetic_perfect_grid.png",
+      "fdi": 53.4,
+      "c_gov": 0.4363,
+      "curv": 0.0593,
+      "p": 0.578,
+      "verdict": "Out-of-scope"
+    },
+    {
+      "desc": "Smooth wavy vertical",
+      "file": "synthetic_wavy_vertical.png",
+      "fdi": 4.1,
+      "c_gov": 0.0434,
+      "curv": 0.0018,
+      "p": 1.0,
+      "verdict": "LR"
+    },
+    {
+      "desc": "Irregular stripe distortion",
+      "file": "synthetic_severe_distortion.png",
+      "fdi": 12.8,
+      "c_gov": 0.1089,
+      "curv": 0.0287,
+      "p": 0.808,
+      "verdict": "LR"
+    }
+  ],
+  "Table3": [
+    {
+      "desc": "Realistic Torso Drape",
+      "file": "realistic_torso_stripe.png",
+      "fdi": 4.3,
+      "c_gov": 0.0451,
+      "curv": 0.0016,
+      "p": 1.0,
+      "verdict": "LR"
+    },
+    {
+      "desc": "Extreme AI Degradation",
+      "file": "extreme_degradation_1.png",
+      "fdi": 55.8,
+      "c_gov": 0.4974,
+      "curv": 0.1336,
+      "p": 0.899,
+      "verdict": "HR"
+    },
+    {
+      "desc": "Localized Block Artifact",
+      "file": "jpeg_artifact_stripe.png",
+      "fdi": 7.1,
+      "c_gov": 0.0727,
+      "curv": 0.0064,
+      "p": 1.0,
+      "verdict": "LR"
+    },
+    {
+      "desc": "Lighting Variation",
+      "file": "lighting_variation_stripe.png",
+      "fdi": 2.2,
+      "c_gov": 0.0219,
+      "curv": 0.0028,
+      "p": 1.0,
+      "verdict": "LR"
+    },
+    {
+      "desc": "Normal Woven Texture",
+      "file": "normal_woven_stripe.png",
+      "fdi": 4.3,
+      "c_gov": 0.0457,
+      "curv": 0.0019,
+      "p": 1.0,
+      "verdict": "LR"
+    }
+  ]
+}

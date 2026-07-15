@@ -1,0 +1,83 @@
+[
+  {
+    "name": "vton_torso_drape.png",
+    "description": "Torso Drape",
+    "fdi": 0.4,
+    "c_gov": 0.0033,
+    "curv": 0.0014,
+    "periodicity": 1.0,
+    "verdict": "LR"
+  },
+  {
+    "name": "vton_warp_light.png",
+    "description": "Light Warp",
+    "fdi": 5.7,
+    "c_gov": 0.0526,
+    "curv": 0.0154,
+    "periodicity": 1.0,
+    "verdict": "LR"
+  },
+  {
+    "name": "vton_detail_loss.png",
+    "description": "Detail Loss",
+    "fdi": 5.6,
+    "c_gov": 0.053,
+    "curv": 0.0133,
+    "periodicity": 1.0,
+    "verdict": "LR"
+  },
+  {
+    "name": "vton_warp_medium.png",
+    "description": "Medium Warp",
+    "fdi": 14.2,
+    "c_gov": 0.1262,
+    "curv": 0.0499,
+    "periodicity": 1.0,
+    "verdict": "LR"
+  },
+  {
+    "name": "vton_composite_failure.png",
+    "description": "Composite Failure",
+    "fdi": 13.7,
+    "c_gov": 0.1274,
+    "curv": 0.037,
+    "periodicity": 1.0,
+    "verdict": "LR"
+  },
+  {
+    "name": "vton_warp_severe.png",
+    "description": "High-Amplitude Smooth Warp",
+    "fdi": 20.5,
+    "c_gov": 0.1873,
+    "curv": 0.0627,
+    "periodicity": 1.0,
+    "verdict": "IS"
+  },
+  {
+    "name": "vton_nonuniform_warp.png",
+    "description": "Non-uniform Warp",
+    "fdi": 28.2,
+    "c_gov": 0.2754,
+    "curv": 0.0526,
+    "periodicity": 1.0,
+    "verdict": "IS"
+  },
+  {
+    "name": "vton_texture_blur.png",
+    "description": "Texture Blur",
+    "fdi": 0.0,
+    "c_gov": 0.0,
+    "curv": 0.0,
+    "periodicity": 1.0,
+    "verdict": "Known blind spot"
+  },
+  {
+    "name": "vton_ghost_artifact.png",
+    "description": "Ghost Artifact",
+    "fdi": 0.0,
+    "c_gov": 0.0,
+    "curv": 0.0,
+    "periodicity": 1.0,
+    "verdict": "Known blind spot"
+  }
+]

@@ -1,0 +1,729 @@
+{
+  "summary": {
+    "sample_count": 30,
+    "mean_fdi": 21.22,
+    "std_fdi": 7.71,
+    "min_fdi": 8.5,
+    "max_fdi": 35.22,
+    "by_method": {
+      "DCI-VTON": {
+        "count": 3,
+        "mean_fdi": 12.24,
+        "min_fdi": 9.21,
+        "max_fdi": 17.1
+      },
+      "GP-VTON": {
+        "count": 8,
+        "mean_fdi": 23.44,
+        "min_fdi": 14.43,
+        "max_fdi": 35.22
+      },
+      "GarDiff": {
+        "count": 1,
+        "mean_fdi": 28.53,
+        "min_fdi": 28.53,
+        "max_fdi": 28.53
+      },
+      "HR-VITON": {
+        "count": 1,
+        "mean_fdi": 30.69,
+        "min_fdi": 30.69,
+        "max_fdi": 30.69
+      },
+      "IDM-VTON": {
+        "count": 2,
+        "mean_fdi": 16.32,
+        "min_fdi": 10.65,
+        "max_fdi": 21.99
+      },
+      "LaDI-VTON": {
+        "count": 1,
+        "mean_fdi": 15.1,
+        "min_fdi": 15.1,
+        "max_fdi": 15.1
+      },
+      "M&M VTO": {
+        "count": 5,
+        "mean_fdi": 18.67,
+        "min_fdi": 8.5,
+        "max_fdi": 35.12
+      },
+      "PF-AFN": {
+        "count": 1,
+        "mean_fdi": 25.62,
+        "min_fdi": 25.62,
+        "max_fdi": 25.62
+      },
+      "PaintByExample": {
+        "count": 2,
+        "mean_fdi": 29.34,
+        "min_fdi": 27.62,
+        "max_fdi": 31.06
+      },
+      "StableVITON": {
+        "count": 5,
+        "mean_fdi": 21.29,
+        "min_fdi": 10.13,
+        "max_fdi": 27.77
+      },
+      "VTON360": {
+        "count": 1,
+        "mean_fdi": 21.31,
+        "min_fdi": 21.31,
+        "max_fdi": 21.31
+      }
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "mmvto_posed9_vertical",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "mmvto_posed_garment_vto_9.jpg",
+      "source_url": "https://mmvto.github.io/static/images/posed_garment_vto/9.jpg",
+      "source_note": "M&M VTO official project-page posed-garment result, manually cropped clean output",
+      "method": "M&M VTO",
+      "target_garment": "Short-sleeve shirt with vertical woven-look stripes",
+      "stripe_type": "multicolour vertical stripe",
+      "crop_box": [
+        3540,
+        70,
+        4685,
+        2045
+      ],
+      "fdi": 8.5,
+      "c_gov": 0.081,
+      "curv": 0.0194,
+      "periodicity": 1.0,
+      "category": "LR"
+    },
+    {
+      "sample_id": "gp_worldcup_02",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "gp_worldcup",
+      "source_file": "gp_worldcup_vton.png",
+      "source_url": "https://raw.githubusercontent.com/xiezhy6/GP-VTON/main/figures/worldcup_vton.png",
+      "source_note": "GP-VTON README official qualitative example",
+      "method": "GP-VTON",
+      "target_garment": "Argentina-style football jersey with broad vertical stripes",
+      "stripe_type": "broad vertical sports stripe",
+      "crop_box": [
+        673,
+        500,
+        1042,
+        960
+      ],
+      "fdi": 18.88,
+      "c_gov": 0.1813,
+      "curv": 0.0406,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "gp_worldcup_03",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "gp_worldcup",
+      "source_file": "gp_worldcup_vton.png",
+      "source_url": "https://raw.githubusercontent.com/xiezhy6/GP-VTON/main/figures/worldcup_vton.png",
+      "source_note": "GP-VTON README official qualitative example",
+      "method": "GP-VTON",
+      "target_garment": "Argentina-style football jersey with broad vertical stripes",
+      "stripe_type": "broad vertical sports stripe",
+      "crop_box": [
+        1044,
+        500,
+        1413,
+        960
+      ],
+      "fdi": 21.26,
+      "c_gov": 0.2033,
+      "curv": 0.0471,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "gp_worldcup_04",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "gp_worldcup",
+      "source_file": "gp_worldcup_vton.png",
+      "source_url": "https://raw.githubusercontent.com/xiezhy6/GP-VTON/main/figures/worldcup_vton.png",
+      "source_note": "GP-VTON README official qualitative example",
+      "method": "GP-VTON",
+      "target_garment": "Argentina-style football jersey with broad vertical stripes",
+      "stripe_type": "broad vertical sports stripe",
+      "crop_box": [
+        1415,
+        500,
+        1784,
+        960
+      ],
+      "fdi": 29.01,
+      "c_gov": 0.2726,
+      "curv": 0.0734,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "gp_worldcup_05",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "gp_worldcup",
+      "source_file": "gp_worldcup_vton.png",
+      "source_url": "https://raw.githubusercontent.com/xiezhy6/GP-VTON/main/figures/worldcup_vton.png",
+      "source_note": "GP-VTON README official qualitative example",
+      "method": "GP-VTON",
+      "target_garment": "Argentina-style football jersey with broad vertical stripes",
+      "stripe_type": "broad vertical sports stripe",
+      "crop_box": [
+        1786,
+        500,
+        2155,
+        960
+      ],
+      "fdi": 18.82,
+      "c_gov": 0.1761,
+      "curv": 0.044,
+      "periodicity": 0.975,
+      "category": "IS"
+    },
+    {
+      "sample_id": "mmvto_posed11_orange",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "mmvto_posed_garment_vto_11.jpg",
+      "source_url": "https://mmvto.github.io/static/images/posed_garment_vto/11.jpg",
+      "source_note": "M&M VTO official project-page posed-garment result, manually cropped clean output",
+      "method": "M&M VTO",
+      "target_garment": "Orange polo shirt with broad horizontal stripe repeats",
+      "stripe_type": "broad horizontal stripe",
+      "crop_box": [
+        3660,
+        85,
+        4515,
+        2070
+      ],
+      "fdi": 35.12,
+      "c_gov": 0.3247,
+      "curv": 0.0778,
+      "periodicity": 0.943,
+      "category": "VI"
+    },
+    {
+      "sample_id": "dci_row3_02",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "dci_page11_row3",
+      "source_file": "dci_supp_page11.png",
+      "source_url": "https://arxiv.org/pdf/2308.06101.pdf",
+      "source_note": "DCI-VTON paper supplementary, Figure 1 row 3",
+      "method": "PF-AFN",
+      "target_garment": "Multicolour horizontal striped knit top",
+      "stripe_type": "multicolour horizontal stripe",
+      "crop_box": [
+        412,
+        604,
+        560,
+        790
+      ],
+      "fdi": 25.62,
+      "c_gov": 0.2453,
+      "curv": 0.0564,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "mmvto_layflat7_blue_diag",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "mmvto_layflat_garment_vto_7.jpg",
+      "source_url": "https://mmvto.github.io/static/images/layflat_garment_vto/7.jpg",
+      "source_note": "M&M VTO official project-page lay-flat garment result, manually cropped clean output",
+      "method": "M&M VTO",
+      "target_garment": "Blue-white asymmetric striped knit top",
+      "stripe_type": "diagonal broad stripe",
+      "crop_box": [
+        7240,
+        25,
+        8205,
+        2115
+      ],
+      "fdi": 20.58,
+      "c_gov": 0.1916,
+      "curv": 0.0542,
+      "periodicity": 0.995,
+      "category": "IS"
+    },
+    {
+      "sample_id": "gp_vton_orange_horizontal",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "gp_vton_page7_300dpi.png",
+      "source_url": "https://arxiv.org/pdf/2303.13756",
+      "source_note": "GP-VTON public paper, qualitative comparison on page 7, manually cropped clean output",
+      "method": "GP-VTON",
+      "target_garment": "Orange-white horizontal striped knit top",
+      "stripe_type": "medium horizontal stripe",
+      "crop_box": [
+        1090,
+        1190,
+        1215,
+        1395
+      ],
+      "fdi": 35.22,
+      "c_gov": 0.3239,
+      "curv": 0.1022,
+      "periodicity": 1.0,
+      "category": "VI"
+    },
+    {
+      "sample_id": "dci_row3_05",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "dci_page11_row3",
+      "source_file": "dci_supp_page11.png",
+      "source_url": "https://arxiv.org/pdf/2308.06101.pdf",
+      "source_note": "DCI-VTON paper supplementary, Figure 1 row 3",
+      "method": "PaintByExample",
+      "target_garment": "Multicolour horizontal striped knit top",
+      "stripe_type": "multicolour horizontal stripe",
+      "crop_box": [
+        865,
+        604,
+        1013,
+        790
+      ],
+      "fdi": 27.62,
+      "c_gov": 0.2654,
+      "curv": 0.0588,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "mmvto_women1_graystripe",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "mmvto_person_identity_women1_4.jpg",
+      "source_url": "https://mmvto.github.io/static/images/person_identity/women1_4.jpg",
+      "source_note": "M&M VTO official project-page person-identity result, manually cropped clean output",
+      "method": "M&M VTO",
+      "target_garment": "Grey sweater with dark horizontal stripe repeats",
+      "stripe_type": "medium horizontal sweater stripe",
+      "crop_box": [
+        6170,
+        25,
+        7040,
+        2105
+      ],
+      "fdi": 18.2,
+      "c_gov": 0.1843,
+      "curv": 0.0215,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "mmvto_women2_navstripe",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "mmvto_person_identity_women2_4.jpg",
+      "source_url": "https://mmvto.github.io/static/images/person_identity/women2_4.jpg",
+      "source_note": "M&M VTO official project-page person-identity result, manually cropped clean output",
+      "method": "M&M VTO",
+      "target_garment": "Cream sweater with navy horizontal stripe repeats",
+      "stripe_type": "bold horizontal sweater stripe",
+      "crop_box": [
+        6170,
+        25,
+        7040,
+        2105
+      ],
+      "fdi": 10.93,
+      "c_gov": 0.1083,
+      "curv": 0.0171,
+      "periodicity": 1.0,
+      "category": "LR"
+    },
+    {
+      "sample_id": "gp_worldcup_06_replacement",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "gp_worldcup_vton.png",
+      "source_url": "https://raw.githubusercontent.com/xiezhy6/GP-VTON/main/figures/worldcup_vton.png",
+      "source_note": "GP-VTON README official qualitative example, manually cropped clean output",
+      "method": "GP-VTON",
+      "target_garment": "Argentina-style football jersey with broad vertical stripes",
+      "stripe_type": "broad vertical sports stripe",
+      "crop_box": [
+        2157,
+        500,
+        2526,
+        960
+      ],
+      "fdi": 29.76,
+      "c_gov": 0.2776,
+      "curv": 0.0792,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "ladi_vton_fine_horizontal",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "ladi_vton_page15_300dpi.png",
+      "source_url": "https://arxiv.org/pdf/2305.13501",
+      "source_note": "LaDI-VTON public paper, qualitative comparison on page 15, manually cropped clean output",
+      "method": "LaDI-VTON",
+      "target_garment": "White-black fine horizontal striped top",
+      "stripe_type": "fine horizontal stripe",
+      "crop_box": [
+        1865,
+        1950,
+        2250,
+        2475
+      ],
+      "fdi": 15.1,
+      "c_gov": 0.1431,
+      "curv": 0.0361,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "dci_row4_04",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "dci_page12_row4",
+      "source_file": "dci_supp_page12.png",
+      "source_url": "https://arxiv.org/pdf/2308.06101.pdf",
+      "source_note": "DCI-VTON paper supplementary, Figure 2 row 4",
+      "method": "HR-VITON",
+      "target_garment": "Multicolour vertical striped dress",
+      "stripe_type": "multicolour vertical stripe",
+      "crop_box": [
+        714,
+        804,
+        862,
+        987
+      ],
+      "fdi": 30.69,
+      "c_gov": 0.285,
+      "curv": 0.0839,
+      "periodicity": 1.0,
+      "category": "VI"
+    },
+    {
+      "sample_id": "dci_row4_05",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "dci_page12_row4",
+      "source_file": "dci_supp_page12.png",
+      "source_url": "https://arxiv.org/pdf/2308.06101.pdf",
+      "source_note": "DCI-VTON paper supplementary, Figure 2 row 4",
+      "method": "PaintByExample",
+      "target_garment": "Multicolour vertical striped dress",
+      "stripe_type": "multicolour vertical stripe",
+      "crop_box": [
+        865,
+        804,
+        1013,
+        987
+      ],
+      "fdi": 31.06,
+      "c_gov": 0.2719,
+      "curv": 0.1156,
+      "periodicity": 1.0,
+      "category": "VI"
+    },
+    {
+      "sample_id": "dci_row4_06",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "dci_page12_row4",
+      "source_file": "dci_supp_page12.png",
+      "source_url": "https://arxiv.org/pdf/2308.06101.pdf",
+      "source_note": "DCI-VTON paper supplementary, Figure 2 row 4",
+      "method": "DCI-VTON",
+      "target_garment": "Multicolour vertical striped dress",
+      "stripe_type": "multicolour vertical stripe",
+      "crop_box": [
+        1016,
+        804,
+        1164,
+        987
+      ],
+      "fdi": 17.1,
+      "c_gov": 0.1553,
+      "curv": 0.0532,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "idm_row1_01",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "idm_qualcmp_row1",
+      "source_file": "idm_qualcmp_2.png",
+      "source_url": "https://idm-vton.github.io/",
+      "source_note": "IDM-VTON project-page qualitative comparison, row 1",
+      "method": "GP-VTON",
+      "target_garment": "Black-white horizontal striped tank top",
+      "stripe_type": "fine horizontal stripe",
+      "crop_box": [
+        320,
+        235,
+        890,
+        901
+      ],
+      "fdi": 14.43,
+      "c_gov": 0.122,
+      "curv": 0.0352,
+      "periodicity": 0.812,
+      "category": "LR"
+    },
+    {
+      "sample_id": "gp_vton_fine_stripe_tank",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "gp_vton_page7_300dpi.png",
+      "source_url": "https://arxiv.org/pdf/2303.13756",
+      "source_note": "GP-VTON public paper, qualitative comparison on page 7, manually cropped clean output",
+      "method": "GP-VTON",
+      "target_garment": "White-black fine horizontal striped tank top",
+      "stripe_type": "fine horizontal stripe",
+      "crop_box": [
+        2150,
+        1190,
+        2285,
+        1395
+      ],
+      "fdi": 20.17,
+      "c_gov": 0.1892,
+      "curv": 0.0516,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "idm_row1_03",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "idm_qualcmp_row1",
+      "source_file": "idm_qualcmp_2.png",
+      "source_url": "https://idm-vton.github.io/",
+      "source_note": "IDM-VTON project-page qualitative comparison, row 1",
+      "method": "DCI-VTON",
+      "target_garment": "Black-white horizontal striped tank top",
+      "stripe_type": "fine horizontal stripe",
+      "crop_box": [
+        1568,
+        235,
+        2138,
+        901
+      ],
+      "fdi": 10.42,
+      "c_gov": 0.0981,
+      "curv": 0.0259,
+      "periodicity": 1.0,
+      "category": "LR"
+    },
+    {
+      "sample_id": "idm_row1_04",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "idm_qualcmp_row1",
+      "source_file": "idm_qualcmp_2.png",
+      "source_url": "https://idm-vton.github.io/",
+      "source_note": "IDM-VTON project-page qualitative comparison, row 1",
+      "method": "StableVITON",
+      "target_garment": "Black-white horizontal striped tank top",
+      "stripe_type": "fine horizontal stripe",
+      "crop_box": [
+        2192,
+        235,
+        2762,
+        901
+      ],
+      "fdi": 10.13,
+      "c_gov": 0.0957,
+      "curv": 0.0247,
+      "periodicity": 1.0,
+      "category": "LR"
+    },
+    {
+      "sample_id": "idm_vton_crossing_stripe",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "idm_qualcmp_3.png",
+      "source_url": "https://idm-vton.github.io/",
+      "source_note": "IDM-VTON official project-page qualitative comparison, manually cropped clean output",
+      "method": "IDM-VTON",
+      "target_garment": "Red-blue crossing-stripe top",
+      "stripe_type": "crossing stripe",
+      "crop_box": [
+        3410,
+        1040,
+        3990,
+        1845
+      ],
+      "fdi": 21.99,
+      "c_gov": 0.1988,
+      "curv": 0.0701,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "gardiff_horizontal_top",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "gardiff_page11_300dpi.png",
+      "source_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/06545.pdf",
+      "source_note": "GarDiff ECCV 2024 public paper, qualitative comparison on page 11, manually cropped clean output",
+      "method": "GarDiff",
+      "target_garment": "White-black horizontal striped top",
+      "stripe_type": "medium horizontal stripe",
+      "crop_box": [
+        1805,
+        1480,
+        1980,
+        1705
+      ],
+      "fdi": 28.53,
+      "c_gov": 0.2612,
+      "curv": 0.085,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "vton360_rugby_stripe",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_diversity_replacement",
+      "source_file": "vton360_qualitative_comparison_1_frame277.jpg",
+      "source_url": "https://scnuhealthy.github.io/VTON360/videos/Qualitative_comparison_1.mp4",
+      "source_note": "VTON360 official project-page qualitative-comparison video frame, Ours column, manually cropped clean output",
+      "method": "VTON360",
+      "target_garment": "Rugby-style shirt with broad horizontal bands",
+      "stripe_type": "broad horizontal sports stripe",
+      "crop_box": [
+        675,
+        515,
+        925,
+        940
+      ],
+      "fdi": 21.31,
+      "c_gov": 0.2007,
+      "curv": 0.0531,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "stableviton_public_01",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_replacement",
+      "source_file": "subject1_runway_female.png",
+      "source_url": "https://rlawjdghek.github.io/StableVITON/",
+      "source_note": "StableVITON official project-page striped-garment example",
+      "method": "StableVITON",
+      "target_garment": "Black-white horizontal stripe top",
+      "stripe_type": "bold horizontal stripe",
+      "crop_box": null,
+      "fdi": 20.94,
+      "c_gov": 0.1671,
+      "curv": 0.0424,
+      "periodicity": 0.654,
+      "category": "IS"
+    },
+    {
+      "sample_id": "stableviton_public_02",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_replacement",
+      "source_file": "subject2_stage_male.png",
+      "source_url": "https://rlawjdghek.github.io/StableVITON/",
+      "source_note": "StableVITON official project-page striped-garment example",
+      "method": "StableVITON",
+      "target_garment": "Black-white horizontal stripe top",
+      "stripe_type": "bold horizontal stripe",
+      "crop_box": null,
+      "fdi": 20.73,
+      "c_gov": 0.2001,
+      "curv": 0.0425,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "idm_row1_06_replacement",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_replacement",
+      "source_file": "idm_qualcmp_2.png",
+      "source_url": "https://idm-vton.github.io/",
+      "source_note": "IDM-VTON project-page qualitative comparison, row 1, IDM-VTON column, manually cropped clean output",
+      "method": "IDM-VTON",
+      "target_garment": "Black-white horizontal striped tank top",
+      "stripe_type": "fine horizontal stripe",
+      "crop_box": [
+        3440,
+        235,
+        3986,
+        901
+      ],
+      "fdi": 10.65,
+      "c_gov": 0.0963,
+      "curv": 0.0268,
+      "periodicity": 0.934,
+      "category": "LR"
+    },
+    {
+      "sample_id": "stableviton_public_04",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_replacement",
+      "source_file": "subject4_event_female.png",
+      "source_url": "https://rlawjdghek.github.io/StableVITON/",
+      "source_note": "StableVITON official project-page striped-garment example",
+      "method": "StableVITON",
+      "target_garment": "Black-white horizontal stripe top",
+      "stripe_type": "bold horizontal stripe",
+      "crop_box": [
+        0,
+        55,
+        620,
+        660
+      ],
+      "fdi": 27.77,
+      "c_gov": 0.2265,
+      "curv": 0.0592,
+      "periodicity": 0.71,
+      "category": "IS"
+    },
+    {
+      "sample_id": "stableviton_public_05",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_replacement",
+      "source_file": "subject5_redcarpet_male.png",
+      "source_url": "https://rlawjdghek.github.io/StableVITON/",
+      "source_note": "StableVITON official project-page striped-garment example",
+      "method": "StableVITON",
+      "target_garment": "Black-white horizontal stripe top",
+      "stripe_type": "bold horizontal stripe",
+      "crop_box": [
+        0,
+        85,
+        620,
+        640
+      ],
+      "fdi": 26.89,
+      "c_gov": 0.2515,
+      "curv": 0.0702,
+      "periodicity": 1.0,
+      "category": "IS"
+    },
+    {
+      "sample_id": "dci_teaser_ours",
+      "image_path": "not_released_due_to_third_party_permissions",
+      "source_group": "manual_replacement",
+      "source_file": "dci_teaser.jpg",
+      "source_url": "https://arxiv.org/pdf/2308.06101.pdf",
+      "source_note": "DCI-VTON official teaser panel (c) Ours",
+      "method": "DCI-VTON",
+      "target_garment": "Multicolour horizontal striped top",
+      "stripe_type": "fine horizontal stripe",
+      "crop_box": [
+        2940,
+        120,
+        3913,
+        1280
+      ],
+      "fdi": 9.21,
+      "c_gov": 0.0843,
+      "curv": 0.0187,
+      "periodicity": 0.908,
+      "category": "LR"
+    }
+  ]
+}

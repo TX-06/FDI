@@ -1,0 +1,73 @@
+{
+  "implementation": {
+    "library": "pyiqa",
+    "version": "0.1.13",
+    "device": "cpu",
+    "full_reference": [
+      "psnr",
+      "ssim",
+      "ms_ssim",
+      "gmsd",
+      "lpips",
+      "dists"
+    ],
+    "no_reference": [
+      "brisque",
+      "niqe",
+      "maniqa"
+    ]
+  },
+  "full_reference_monotonicity_spearman": {
+    "wavy": {
+      "fdi": -0.6,
+      "psnr": 0.3,
+      "ssim": 0.4,
+      "ms_ssim": 0.3591,
+      "gmsd": -0.9,
+      "lpips": 1.0,
+      "dists": 0.6
+    },
+    "noise": {
+      "fdi": 1.0,
+      "psnr": 1.0,
+      "ssim": 1.0,
+      "ms_ssim": 1.0,
+      "gmsd": 1.0,
+      "lpips": 1.0,
+      "dists": 1.0
+    },
+    "jpeg": {
+      "fdi": null,
+      "psnr": 0.9,
+      "ssim": 1.0,
+      "ms_ssim": 0.9,
+      "gmsd": 1.0,
+      "lpips": 0.9,
+      "dists": 1.0
+    }
+  },
+  "no_reference_vton": {
+    "sample_count": 30,
+    "metrics": {
+      "brisque": {
+        "mean": 44.414001,
+        "minimum": 5.343933,
+        "maximum": 73.447449,
+        "spearman_with_fdi_distortion_direction": -0.7273
+      },
+      "niqe": {
+        "mean": 8.558983,
+        "minimum": 4.108185,
+        "maximum": 24.372212,
+        "spearman_with_fdi_distortion_direction": 0.1457
+      },
+      "maniqa": {
+        "mean": 0.39219,
+        "minimum": 0.245611,
+        "maximum": 0.641085,
+        "spearman_with_fdi_distortion_direction": 0.1097
+      }
+    }
+  },
+  "interpretation_boundary": "Full-reference metrics use pixel-aligned synthetic images. No-reference metrics use the complete cropped VTON outputs and do not isolate stripe geometry."
+}

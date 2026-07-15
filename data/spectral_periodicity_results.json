@@ -1,0 +1,68 @@
+[
+  {
+    "sample": "Perfect periodic stripes",
+    "sample_cn": "稳定周期条纹",
+    "image": "test_images/spectral_periodicity/spectral_perfect_periodic.png",
+    "p": 1.0,
+    "c_gov": 0.0,
+    "curv": 0.0,
+    "fdi_with_fft": 0.0,
+    "fdi_without_fft": 0.0,
+    "fft_discount": 0.65
+  },
+  {
+    "sample": "Wavy but periodic stripes",
+    "sample_cn": "自然波浪但周期仍稳定",
+    "image": "test_images/spectral_periodicity/spectral_wavy_periodic.png",
+    "p": 1.0,
+    "c_gov": 0.1758,
+    "curv": 0.0027,
+    "fdi_with_fft": 16.5,
+    "fdi_without_fft": 25.4,
+    "fft_discount": 0.65
+  },
+  {
+    "sample": "Non-uniform stripe spacing",
+    "sample_cn": "非均匀条纹间距",
+    "image": "test_images/spectral_periodicity/spectral_nonuniform_spacing.png",
+    "p": 0.397,
+    "c_gov": 0.0,
+    "curv": 0.0,
+    "fdi_with_fft": 0.0,
+    "fdi_without_fft": 0.0,
+    "fft_discount": 0.861
+  },
+  {
+    "sample": "Wavy non-uniform stripes",
+    "sample_cn": "非均匀间距叠加波浪形变",
+    "image": "test_images/spectral_periodicity/spectral_wavy_nonuniform.png",
+    "p": 0.611,
+    "c_gov": 0.2788,
+    "curv": 0.0135,
+    "fdi_with_fft": 32.2,
+    "fdi_without_fft": 40.9,
+    "fft_discount": 0.786
+  },
+  {
+    "sample": "Phase-drift stripe field",
+    "sample_cn": "相位漂移条纹场",
+    "image": "test_images/spectral_periodicity/spectral_phase_drift.png",
+    "p": 1.0,
+    "c_gov": 0.5391,
+    "curv": 0.0431,
+    "fdi_with_fft": 52.3,
+    "fdi_without_fft": 80.4,
+    "fft_discount": 0.65
+  },
+  {
+    "sample": "Random non-periodic texture",
+    "sample_cn": "随机非周期纹理",
+    "image": "test_images/spectral_periodicity/spectral_random_texture.png",
+    "p": 0.075,
+    "c_gov": 0.7649,
+    "curv": 0.1908,
+    "fdi_with_fft": 100.0,
+    "fdi_without_fft": 100.0,
+    "fft_discount": 0.974
+  }
+]

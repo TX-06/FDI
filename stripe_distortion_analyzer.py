@@ -72,7 +72,7 @@ def _skin_mask_hsv_ycrcb(rgb: np.ndarray) -> np.ndarray:
 
     参考范围：
       HSV:   H ∈ [0, 50]  S ∈ [20, 150]  V ∈ [60, 255]  (PeerJ 2019)
-      YCrCb: Cb ∈ [133, 173]  Cr ∈ [77, 127]           (经典椭圆模型简化)
+      YCrCb: Cr ∈ [133, 173]  Cb ∈ [77, 127]           (经典椭圆模型简化)
 
     返回：布尔矩阵 [H, W]，True = 检测为肤色/待排除。
     """
@@ -392,19 +392,25 @@ def compute_curvature_distortion(
     canny_high: float = 90.0,
     min_contour_len: int = 50,
     roi_mask: Optional[np.ndarray] = None,
+    curvature_stride: int = 7,
 ) -> np.ndarray:
     """
     通过 Menger 曲率的局部方差检测锯齿/波浪边缘伪影。
 
     算法：
       1. Canny 边缘检测 → 轮廓提取
-      2. 每个轮廓点计算 Menger 曲率：
-           k_i = 4 · Area(△p_{i-1}p_i p_{i+1}) / (|a|·|b|·|c|)
-      3. 在 ±3 点窗口内计算曲率局部方差
+      2. 每个轮廓点计算跨步 Menger 曲率：
+           k_i = 4 · Area(△p_{i-s}p_i p_{i+s}) / (|a|·|b|·|c|)
+      3. 在局部窗口内计算曲率方差
       4. 通过 1 - exp(-var·15) 映射到 [0, 1]
 
     ⭐ v2.1 修复：np.cross 对 2D 向量在 NumPy 2.0 中已废弃，
        改用显式 2D 叉积 a_x·b_y - a_y·b_x。
+
+    说明：
+      curvature_stride 默认取 7，用跨步弦长而不是相邻像素估计曲率。
+      这样可以过滤规则斜条纹在像素网格上的一像素阶梯，避免把
+      直线栅格化误判为真实织物图案弯折。
 
     返回：curv_map [H, W]，float32，值 ∈ [0, 1]。
     """
@@ -419,18 +425,20 @@ def compute_curvature_distortion(
     h, w = gray.shape
     curv_map = np.zeros((h, w), dtype=np.float32)
 
+    stride = max(1, int(curvature_stride))
+
     for contour in contours:
         pts = contour.reshape(-1, 2).astype(np.float64)
         n = len(pts)
-        if n < min_contour_len:
+        if n < max(min_contour_len, 2 * stride + 7):
             continue
 
         # Menger 曲率
         curv = np.zeros(n, dtype=np.float64)
-        for i in range(1, n - 1):
-            ax, ay = pts[i, 0] - pts[i - 1, 0], pts[i, 1] - pts[i - 1, 1]
-            bx, by = pts[i + 1, 0] - pts[i, 0], pts[i + 1, 1] - pts[i, 1]
-            cx, cy = pts[i + 1, 0] - pts[i - 1, 0], pts[i + 1, 1] - pts[i - 1, 1]
+        for i in range(stride, n - stride):
+            ax, ay = pts[i, 0] - pts[i - stride, 0], pts[i, 1] - pts[i - stride, 1]
+            bx, by = pts[i + stride, 0] - pts[i, 0], pts[i + stride, 1] - pts[i, 1]
+            cx, cy = pts[i + stride, 0] - pts[i - stride, 0], pts[i + stride, 1] - pts[i - stride, 1]
 
             na = np.hypot(ax, ay)
             nb = np.hypot(bx, by)
@@ -442,8 +450,9 @@ def compute_curvature_distortion(
             cross_2d = ax * by - ay * bx
             curv[i] = 4.0 * abs(cross_2d) * 0.5 / denom
 
-        # 局部曲率方差 → "锯齿度" 分数
-        half_w = 3
+        # 局部曲率方差 → "锯齿度" 分数。
+        # 窗口随跨步放大，进一步压制规则斜线的像素级阶梯。
+        half_w = max(3, stride)
         for i in range(half_w, n - half_w):
             seg = curv[i - half_w : i + half_w + 1]
             var_local = np.var(seg)
@@ -519,8 +528,8 @@ def compute_periodicity_fft(
 
     fft_viz = mag_log / (mag_log.max() + 1e-8)
 
-    def _profile_for_angle(angle_deg: float) -> np.ndarray:
-        """将主导梯度方向旋转到水平轴后，提取横向灰度剖面。"""
+    def _profile_for_angle(angle_deg: float, axis: int = 0) -> np.ndarray:
+        """将主导梯度方向归一化后，提取一维灰度剖面。"""
         center = (w / 2.0, h / 2.0)
         matrix = cv2.getRotationMatrix2D(center, -float(angle_deg), 1.0)
         rotated = cv2.warpAffine(
@@ -532,9 +541,16 @@ def compute_periodicity_fft(
             flags=cv2.INTER_NEAREST, borderMode=cv2.BORDER_CONSTANT, borderValue=0,
         ).astype(bool)
 
-        counts = rotated_mask.sum(axis=0).astype(np.float64)
-        sums = (rotated * rotated_mask).sum(axis=0).astype(np.float64)
-        valid = counts > max(3, 0.03 * h)
+        if axis == 0:
+            counts = rotated_mask.sum(axis=0).astype(np.float64)
+            sums = (rotated * rotated_mask).sum(axis=0).astype(np.float64)
+            min_count = max(3, 0.03 * h)
+        else:
+            counts = rotated_mask.sum(axis=1).astype(np.float64)
+            sums = (rotated * rotated_mask).sum(axis=1).astype(np.float64)
+            min_count = max(3, 0.03 * w)
+
+        valid = counts > min_count
         if valid.sum() < 16:
             return np.array([], dtype=np.float64)
         profile = sums[valid] / np.maximum(counts[valid], 1.0)
@@ -563,12 +579,18 @@ def compute_periodicity_fft(
         return float(np.clip((concentration - 0.08) / 0.47, 0.0, 1.0))
 
     if dominant_deg is not None:
-        profile = _profile_for_angle(dominant_deg)
-        periodicity_strength = _periodicity_from_profile(profile)
+        # 主导方向的符号和“条纹方向/梯度方向”在不同图像中可能互换。
+        # 同时检查旋转后的横向与纵向剖面，取更强的周期证据，
+        # 可避免规则 45° 斜条纹因剖面轴选错而被低估。
+        periodicity_strength = max(
+            _periodicity_from_profile(_profile_for_angle(dominant_deg, axis=0)),
+            _periodicity_from_profile(_profile_for_angle(dominant_deg, axis=1)),
+        )
     else:
         candidates = []
         for angle_deg in range(0, 180, 10):
-            candidates.append(_periodicity_from_profile(_profile_for_angle(angle_deg)))
+            candidates.append(_periodicity_from_profile(_profile_for_angle(angle_deg, axis=0)))
+            candidates.append(_periodicity_from_profile(_profile_for_angle(angle_deg, axis=1)))
         periodicity_strength = float(max(candidates) if candidates else 0.0)
 
     return periodicity_strength, fft_viz
@@ -664,6 +686,7 @@ def compute_fdi(
     w_gov: float = 0.40,
     w_curv: float = 0.25,
     w_period: float = 0.35,
+    scale: float = 220.0,
     roi_mask: Optional[np.ndarray] = None,
 ) -> Tuple[float, np.ndarray, float, float, float]:
     """
@@ -678,7 +701,7 @@ def compute_fdi(
       - 自然弯曲但条纹完好：FFT 峰值明显 → periodicity 高 → 降低 FDI
       - AI 纹理崩溃：FFT 无峰值 → periodicity 低 → 保持高 FDI
 
-    FDI = min(100, scale · (w_gov · GOV_mean + w_curv · CURV_mean)
+    FDI = min(100, ψ · (w_gov · GOV_mean + w_curv · CURV_mean)
                                · (1 - w_period · periodicity))
 
     校准（基于合成+真实图像测试集验证）：
@@ -713,8 +736,8 @@ def compute_fdi(
     #
     #   FDI = min(100, scale · 失真证据 · 周期性折扣)
     #
-    # scale=100: GOV=0.5, Curv=0.8, 折扣=1.0 → FDI=47
-    # scale=100: GOV=0.5, Curv=0.8, 折扣=0.7 → FDI=33
+    # ψ=220: GOV=0.5, Curv=0.8, 折扣=1.0 → FDI=100（封顶）
+    # ψ=220: GOV=0.1, Curv=0.05, 折扣=0.7 → FDI≈13
 
     distortion_evidence = w_gov * gov_mean + w_curv * curv_mean
 
@@ -724,7 +747,7 @@ def compute_fdi(
     periodic_discount = 1.0 - w_period * period_factor
 
     raw = distortion_evidence * periodic_discount
-    fdi = min(100.0, raw * 100.0)
+    fdi = min(100.0, raw * float(scale))
 
     # 组合图（可视化用，不应用周期性折扣以便显示热力图对比）
     combined_map = (0.65 * gov_map + 0.35 * curv_map).astype(np.float32)
@@ -1017,17 +1040,13 @@ def analyze_stripe_distortion(
           f"Periodicity = {periodicity:.3f}")
 
     if fdi < 15:
-        label = "[Excellent] — physically plausible fabric draping"
+        label = "[LR] — low structural response"
     elif fdi < 30:
-        label = "[Acceptable] — moderate but acceptable stripe deformation"
+        label = "[IS] — intermediate screening range"
     elif fdi < 45:
-        label = "[Moderate]  — noticeable stripe waviness / skew"
-    elif fdi < 70:
-        label = "[Severe]    — significant fabric-physics violation"
-    elif fdi < 85:
-        label = "[Bad]       — severe AI-generated texture breakdown"
+        label = "[VI] — visual-inspection range"
     else:
-        label = "[Critical]  — catastrophic texture collapse"
+        label = "[HR] — high structural response"
     print(f"   Verdict:  {label}")
     print(f"   {'-' * 65}\n")
     # 返回参与 FDI 计算的 ROI-level GOV、CURV 和 P，保证表格可复现。

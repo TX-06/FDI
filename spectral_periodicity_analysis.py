@@ -25,6 +25,7 @@ IMGDIR = ROOT / "test_images" / "spectral_periodicity"
 OUTDIR = ROOT / "output"
 IMGDIR.mkdir(parents=True, exist_ok=True)
 OUTDIR.mkdir(exist_ok=True)
+PSI = 220.0
 
 
 def save_gray(gray: np.ndarray, name: str) -> Path:
@@ -105,7 +106,7 @@ def main() -> None:
             use_skin_suppression=False,
             use_texture_filter=False,
         )
-        geometric_evidence = 100.0 * (0.65 * c_gov + 0.35 * curv)
+        geometric_evidence = min(100.0, PSI * (0.65 * c_gov + 0.35 * curv))
         results.append(
             {
                 "sample": english_name,

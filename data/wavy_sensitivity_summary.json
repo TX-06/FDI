@@ -1,0 +1,42 @@
+{
+  "amplitudes": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30
+  ],
+  "wavelengths": [
+    48,
+    96,
+    160
+  ],
+  "groups": {
+    "48": {
+      "spearman_amplitude_fdi": 0.9912,
+      "minimum_fdi": 0.0,
+      "maximum_fdi": 15.7425
+    },
+    "96": {
+      "spearman_amplitude_fdi": 0.4618,
+      "minimum_fdi": 0.0,
+      "maximum_fdi": 4.8296
+    },
+    "160": {
+      "spearman_amplitude_fdi": -0.2647,
+      "minimum_fdi": 0.0,
+      "maximum_fdi": 4.5472
+    }
+  }
+}

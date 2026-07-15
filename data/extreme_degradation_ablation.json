@@ -1,0 +1,38 @@
+[
+  {
+    "configuration": "Full FDI",
+    "components": "C-GOV + CURV + FFT + ROI",
+    "parameters": "alpha=0.65, beta=0.35",
+    "fdi": 55.8,
+    "c_gov": 0.4974,
+    "curv": 0.1336,
+    "p": 0.899
+  },
+  {
+    "configuration": "GOV Only",
+    "components": "C-GOV only (beta=0)",
+    "parameters": "alpha=1.0, beta=0.0",
+    "fdi": 75.0,
+    "c_gov": 0.4974,
+    "curv": 0.1336,
+    "p": 0.899
+  },
+  {
+    "configuration": "CURV Only",
+    "components": "CURV only (alpha=0)",
+    "parameters": "alpha=0.0, beta=1.0",
+    "fdi": 20.1,
+    "c_gov": 0.4974,
+    "curv": 0.1336,
+    "p": 0.899
+  },
+  {
+    "configuration": "Equal Weights",
+    "components": "C-GOV + CURV",
+    "parameters": "alpha=0.5, beta=0.5",
+    "fdi": 47.6,
+    "c_gov": 0.4974,
+    "curv": 0.1336,
+    "p": 0.899
+  }
+]

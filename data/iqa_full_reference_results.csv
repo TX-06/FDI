@@ -1,0 +1,16 @@
+sample_id,description,family,severity_level,fdi,psnr,ssim,ms_ssim,gmsd,lpips,dists
+synth_wavy_amp4,Wavy stripe (amplitude 4 px),wavy,1,4.1994,10.3563,0.298525,0.653132,0.454796,0.488345,0.349523
+synth_wavy_amp8,Wavy stripe (amplitude 8 px),wavy,2,3.5898,6.70439,0.129037,0.217786,0.447157,0.663809,0.468996
+synth_wavy_amp12,Wavy stripe (amplitude 12 px),wavy,3,2.339,5.155656,0.073545,0.0,0.444145,0.710675,0.513862
+synth_wavy_amp16,Wavy stripe (amplitude 16 px),wavy,4,2.4711,5.595971,0.049857,0.0,0.430751,0.761025,0.509595
+synth_wavy_amp20,Wavy stripe (amplitude 20 px),wavy,5,3.083,6.943454,0.147932,0.258962,0.4391,0.796664,0.498629
+synth_noise_std10,Gaussian noise (sigma 10),noise,1,1.2996,29.885809,0.959402,0.997606,0.040957,0.043852,0.230813
+synth_noise_std20,Gaussian noise (sigma 20),noise,2,5.0304,23.674509,0.874973,0.99174,0.115349,0.118816,0.291901
+synth_noise_std30,Gaussian noise (sigma 30),noise,3,10.9419,20.123226,0.793247,0.984382,0.179586,0.182261,0.313492
+synth_noise_std40,Gaussian noise (sigma 40),noise,4,17.8046,17.679836,0.722211,0.975967,0.227489,0.258356,0.336584
+synth_jpeg_q85,JPEG compression (quality 85),jpeg,1,0.0,51.361496,0.999331,0.999964,0.000574,0.000198,0.061874
+synth_jpeg_q70,JPEG compression (quality 70),jpeg,2,0.0,44.895977,0.998329,0.999856,0.00914,0.000645,0.091238
+synth_jpeg_q50,JPEG compression (quality 50),jpeg,3,0.0,45.861721,0.998127,0.99988,0.011714,0.000348,0.110755
+synth_jpeg_q30,JPEG compression (quality 30),jpeg,4,0.0,37.212669,0.982912,0.998935,0.061025,0.004083,0.150562
+synth_jpeg_q15,JPEG compression (quality 15),jpeg,5,0.0,31.071545,0.947267,0.996245,0.129419,0.010571,0.233217
+synth_cross_hatch,Cross-hatch pattern (out of scope),scope,1,40.5827,10.903817,0.645356,0.773242,0.366181,0.501167,0.353111
