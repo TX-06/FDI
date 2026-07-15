@@ -60,7 +60,7 @@ FDI_repo/
 
 This repository does not redistribute third-party public VTON image crops or human-participant data.
 
-The `data/public_image_source_inventory.*` files list the public image sources used for manuscript stress testing, including source URLs and permission status notes. The image crops themselves are not included because their reuse depends on the original source licences and journal permission requirements.
+The `data/public_image_source_inventory.csv` file lists the public image sources used for manuscript stress testing, including source URLs and permission status notes. The image crops themselves are not included because their reuse depends on the original source licences and journal permission requirements.
 
 The `data/public_vton_fdi_results.*` files provide the numeric FDI outputs for the public VTON stress-test set. Local crop paths have been removed and replaced with `not_released_due_to_third_party_permissions`.
 
